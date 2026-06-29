@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Theme variables.
+  These are DEFAULT values; they get overwritten at runtime by <ThemeProvider>
+  using the THEME block in src/config/portfolio.config.ts. Edit the config,
+  not this file.
+*/
+:root {
+  --color-background: #050816;
+  --color-surface: #0b1023;
+  --color-foreground: #e8ecf8;
+  --color-muted: #8b93b0;
+  --color-primary: #3b82f6;
+  --color-secondary: #a855f7;
+  --color-accent: #22d3ee;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --radius-card: 1.25rem;
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-heading: var(--font-inter), "Inter", system-ui, sans-serif;
+  --font-mono: var(--font-jbmono), "JetBrains Mono", monospace;
+}
+
+/* Light mode overrides (toggled by adding/removing .dark on <html>). */
+:root.light {
+  --color-background: #f7f8fc;
+  --color-surface: #ffffff;
+  --color-foreground: #0b1023;
+  --color-muted: #5b6478;
+  --color-border: rgba(0, 0, 0, 0.08);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--color-primary), var(--color-secondary));
+  border-radius: 999px;
+}
+
+/* Utility: gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Utility: glassmorphism card */
+.glass {
+  background: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--color-border);
+}
+
+/* Animated mesh background blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Hide default cursor only when custom cursor is enabled */
+.custom-cursor-active,
+.custom-cursor-active * {
+  cursor: none !important;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Section anchor offset for fixed navbar */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+/* ============================================================
+   UPGRADES: aurora, grid texture, marquee, reveal helpers
+   ============================================================ */
+
+/* Subtle grid texture overlay for depth */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--color-foreground) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-foreground) 6%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+/* Aurora animated gradient layer */
+.aurora {
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  filter: blur(70px);
+  opacity: 0.55;
+  background:
+    radial-gradient(40% 40% at 20% 30%, var(--color-primary), transparent 60%),
+    radial-gradient(35% 45% at 80% 20%, var(--color-secondary), transparent 60%),
+    radial-gradient(45% 40% at 60% 80%, var(--color-accent), transparent 60%);
+  background-size: 200% 200%;
+  animation: aurora-pan 18s ease-in-out infinite;
+}
+@keyframes aurora-pan {
+  0%   { background-position: 0% 50%, 100% 0%, 50% 100%; }
+  50%  { background-position: 100% 50%, 0% 100%, 80% 0%; }
+  100% { background-position: 0% 50%, 100% 0%, 50% 100%; }
+}
+
+/* Infinite marquee */
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+.marquee:hover { animation-play-state: paused; }
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
