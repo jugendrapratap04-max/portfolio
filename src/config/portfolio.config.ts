@@ -56,7 +56,6 @@ export const config: PortfolioConfig = {
     { label: "Learning", href: "#learning" },
     { label: "Projects", href: "#projects" },
     { label: "Education", href: "#education" },
-    { label: "GitHub", href: "#github" },
     { label: "Contact", href: "#contact" },
   ],
 
@@ -72,8 +71,8 @@ export const config: PortfolioConfig = {
     experience: false,     // no work experience yet — turn on when you add some
     education: true,
     certifications: true,  // be10x workshop added below
-    achievements: true,    // real numbers from your projects
-    github: true,
+    achievements: false,   // hidden — thin vanity stats; turn on when numbers grow
+    github: false,         // embedded graph looks sparse on a new account; GitHub link still in hero
     blog: false,           // future-ready: flip on when you start writing
     contact: true,
   },
