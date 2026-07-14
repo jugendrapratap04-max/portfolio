@@ -26,7 +26,7 @@ export const config: PortfolioConfig = {
     bio: "I'm a second-year B.Tech Computer Science (Data Science) student at GLA University with hands-on experience building machine learning models and analyzing real-world datasets using Python, SQL and the Pandas/NumPy/Scikit-learn stack. I've built and deployed an end-to-end ML web application along with data-analytics and automation workflows, and I'm currently strengthening my DSA, Java and Agentic AI skills. I'm seeking a Data Science, Data Analyst, AI or Python Developer internship where I can deliver measurable impact.",
     role: "Student",
     email: "jugendrapratap04@gmail.com",
-    phone: "+91 84393 XXXXX",
+    phone: "",   // add your real number to show it in Contact; empty = hidden
     location: "India · Open to Remote",
     resumeUrl: "/resume.pdf",
     profileImage: "/profile.jpg",

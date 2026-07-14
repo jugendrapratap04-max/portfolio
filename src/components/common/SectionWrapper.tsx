@@ -28,12 +28,12 @@ export function SectionWrapper({ id, title, eyebrow, subtitle, children, classNa
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.25em] text-accent">{eyebrow}</p>
           )}
           {title && (
-            <h2 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
-              <span className="text-gradient">{title}</span>
+            <h2 className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+              {title}
             </h2>
           )}
           {subtitle && <p className="mx-auto mt-4 max-w-2xl text-muted">{subtitle}</p>}
-          <div className="mx-auto mt-6 h-1 w-20 rounded-full bg-brand-gradient" />
+          <div className="mx-auto mt-6 h-0.5 w-16 rounded-full bg-accent" />
         </motion.div>
       )}
       {children}
