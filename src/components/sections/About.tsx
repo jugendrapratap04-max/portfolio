@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Target, Rocket, Sparkles, MapPin, Code2 } from "lucide-react";
+import { GraduationCap, Target, Sparkles, MapPin, Code2 } from "lucide-react";
 import { config } from "@/config/portfolio.config";
 import { SectionWrapper } from "@/components/common/SectionWrapper";
 
@@ -17,7 +17,6 @@ const reveal = {
 /** Modern "bento grid" About section. */
 export function About() {
   const edu = config.education[0];
-  const learning = edu?.description ?? "";
 
   return (
     <SectionWrapper id="about" eyebrow="Get to know me" title="About Me">
@@ -66,22 +65,12 @@ export function About() {
           <p className="mt-1 text-sm text-muted">Grow into a strong Software / AI Engineer solving real problems.</p>
         </motion.div>
 
-        {/* Building card */}
+        {/* Building card (wide, fills the bottom row) */}
         <motion.div custom={4} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
-          className="glass rounded-card p-6 shadow-soft transition-shadow hover:shadow-glow">
+          className="glass rounded-card p-6 shadow-soft transition-shadow hover:shadow-glow sm:col-span-2">
           <Code2 className="mb-3 text-accent" size={24} />
           <h3 className="font-heading text-base font-semibold">What I Build</h3>
           <p className="mt-1 text-sm text-muted">ML models, data-analysis pipelines and clean, practical software.</p>
-        </motion.div>
-
-        {/* Currently learning card (wide) */}
-        <motion.div custom={5} variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true }}
-          className="glass rounded-card p-6 shadow-soft transition-shadow hover:shadow-glow sm:col-span-2">
-          <Rocket className="mb-3 text-accent" size={24} />
-          <h3 className="font-heading text-base font-semibold">Currently Learning</h3>
-          <p className="mt-1 text-sm text-muted">
-            {learning || "DSA, Java, Machine Learning, Agentic AI, AI workflow automation and advanced Python."}
-          </p>
         </motion.div>
       </div>
     </SectionWrapper>
