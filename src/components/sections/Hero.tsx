@@ -95,10 +95,12 @@ export function Hero() {
           style={{ transform: `translate(${parallax.x * -0.5}px, ${parallax.y * -0.5}px)` }}
           className="relative mx-auto"
         >
-          <div className="absolute inset-0 animate-pulse rounded-full bg-brand-gradient opacity-30 blur-3xl" />
-          <div className="relative h-56 w-56 overflow-hidden rounded-full border border-border bg-surface shadow-glow sm:h-72 sm:w-72">
-            {/* Fallback initial sits BEHIND; the photo (if it loads) covers it. */}
-            <div className="absolute inset-0 grid place-items-center bg-brand-gradient text-7xl font-bold text-white">
+          <div className="absolute inset-0 rounded-full bg-slate-300 opacity-40 blur-3xl dark:animate-pulse dark:bg-brand-gradient dark:opacity-30" />
+          <div className="relative h-56 w-56 overflow-hidden rounded-full border border-border bg-surface shadow-soft dark:shadow-glow sm:h-72 sm:w-72">
+            {/* Fallback initial sits BEHIND; the photo (if it loads) covers it.
+                Photo is a transparent cut-out, so this colour is what shows around
+                the person: emerald in dark mode, soft grey in light mode. */}
+            <div className="absolute inset-0 grid place-items-center bg-slate-200 text-7xl font-bold text-slate-400 dark:bg-brand-gradient dark:text-white">
               {personal.firstName.charAt(0)}
             </div>
             {/* Drop your photo at public/profile.jpg. */}
