@@ -43,7 +43,7 @@ export const config: PortfolioConfig = {
     { icon: "Mail", label: "Email", url: "mailto:jugendrapratap04@gmail.com", enabled: true },
     { icon: "Twitter", label: "Twitter", url: "", enabled: false },
     { icon: "Instagram", label: "Instagram", url: "", enabled: false },
-    { icon: "Youtube", label: "YouTube", url: "https://www.youtube.com/@TheTestVerse", enabled: true },
+    { icon: "Youtube", label: "YouTube", url: "", enabled: false },
     { icon: "Globe", label: "Portfolio", url: "", enabled: false },
   ],
 
@@ -53,7 +53,6 @@ export const config: PortfolioConfig = {
   navigation: [
     { label: "Home", href: "#hero" },
     { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
     { label: "Projects", href: "#projects" },
     { label: "Education", href: "#education" },
     { label: "GitHub", href: "#github" },
@@ -66,7 +65,7 @@ export const config: PortfolioConfig = {
   sections: {
     hero: true,
     about: true,
-    skills: true,
+    skills: false,         // hidden for now — turn back on when you re-add skills
     projects: true,
     experience: false,     // no work experience yet — turn on when you add some
     education: true,
@@ -262,13 +261,13 @@ export const config: PortfolioConfig = {
   /*  THEME                                                                     */
   /* -------------------------------------------------------------------------- */
   theme: {
-    background: "#050816",
-    surface: "#0b1023",
-    foreground: "#e8ecf8",
-    muted: "#8b93b0",
-    primary: "#6366f1",
-    secondary: "#8b5cf6",
-    accent: "#38bdf8",
+    background: "#0d1117",
+    surface: "#161b22",
+    foreground: "#e6edf3",
+    muted: "#9198a1",
+    primary: "#3b82f6",
+    secondary: "#2563eb",
+    accent: "#60a5fa",
     border: "rgba(255,255,255,0.08)",
     radiusCard: "1.25rem",
     fontSans: "Inter",
