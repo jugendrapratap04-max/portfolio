@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Download, Mail, FolderGit2, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 import { config } from "@/config/portfolio.config";
-import { TypingText } from "@/components/common/TypingText";
 import { MagneticButton } from "@/components/common/MagneticButton";
 import { Aurora } from "@/components/common/Aurora";
 import { Icon } from "@/lib/icon";
@@ -51,8 +50,8 @@ export function Hero() {
             Hi, I&apos;m <span className="text-gradient">{personal.name}</span>
           </h1>
 
-          <p className="mt-4 text-xl text-muted sm:text-2xl">
-            <TypingText words={personal.typingRoles} className="font-mono text-accent" />
+          <p className="mt-4 text-xl font-medium text-accent sm:text-2xl">
+            {personal.headline}
           </p>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted">{personal.tagline}</p>

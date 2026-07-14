@@ -298,7 +298,7 @@ export const config: PortfolioConfig = {
     enableCustomCursor: false,    // keep the normal cursor (better UX for recruiters)
     enableScrollProgress: true,   // subtle top progress bar
     enableParallax: false,        // no mouse-drift; calmer, cleaner
-    enableTypingAnimation: true,  // tasteful rotating role in the hero
+    enableTypingAnimation: false, // hero now shows one static headline (no loop)
     enableFloatingShapes: false,  // no floating blobs; clean background
   },
 
