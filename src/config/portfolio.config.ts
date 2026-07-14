@@ -70,7 +70,7 @@ export const config: PortfolioConfig = {
     projects: true,
     experience: false,     // no work experience yet — turn on when you add some
     education: true,
-    certifications: true,  // be10x workshop added below
+    certifications: false, // hidden until there are 3–4; data kept below, flip to true later
     achievements: false,   // hidden — thin vanity stats; turn on when numbers grow
     github: false,         // embedded graph looks sparse on a new account; GitHub link still in hero
     blog: false,           // future-ready: flip on when you start writing
