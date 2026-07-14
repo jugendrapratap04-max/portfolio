@@ -84,6 +84,16 @@ export interface Certification {
   hidden?: boolean;
 }
 
+export interface LearningItem {
+  /** What you're currently learning, e.g. "Data Structures & Algorithms". */
+  name: string;
+  /** Lucide icon name OR an emoji string. */
+  icon: string;
+  /** One short line about it. */
+  detail?: string;
+  hidden?: boolean;
+}
+
 export interface Achievement {
   label: string;
   value: number;
@@ -140,6 +150,7 @@ export interface SectionToggles {
   hero: boolean;
   about: boolean;
   skills: boolean;
+  learning: boolean;
   projects: boolean;
   experience: boolean;
   education: boolean;
@@ -196,6 +207,7 @@ export interface PortfolioConfig {
   sections: SectionToggles;
   skills: Skill[];
   skillCategories: string[];
+  learning: LearningItem[];
   projects: Project[];
   experience: ExperienceItem[];
   education: EducationItem[];

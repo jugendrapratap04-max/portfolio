@@ -9,6 +9,7 @@ import { Hero } from "@/components/sections/Hero";
 import { TechMarquee } from "@/components/common/TechMarquee";
 import { About } from "@/components/sections/About";
 import { Skills } from "@/components/sections/Skills";
+import { CurrentlyLearning } from "@/components/sections/CurrentlyLearning";
 import { Projects } from "@/components/sections/Projects";
 import { Experience } from "@/components/sections/Experience";
 import { Education } from "@/components/sections/Education";
@@ -32,6 +33,7 @@ export default function Home() {
         {s.skills && <TechMarquee />}
         {s.about && <About />}
         {s.skills && <Skills />}
+        {s.learning && <CurrentlyLearning />}
         {s.projects && <Projects />}
         {s.experience && <Experience />}
         {s.education && <Education />}

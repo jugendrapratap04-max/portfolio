@@ -53,6 +53,7 @@ export const config: PortfolioConfig = {
   navigation: [
     { label: "Home", href: "#hero" },
     { label: "About", href: "#about" },
+    { label: "Learning", href: "#learning" },
     { label: "Projects", href: "#projects" },
     { label: "Education", href: "#education" },
     { label: "GitHub", href: "#github" },
@@ -66,6 +67,7 @@ export const config: PortfolioConfig = {
     hero: true,
     about: true,
     skills: false,         // hidden for now — turn back on when you re-add skills
+    learning: true,        // "Currently Learning" section
     projects: true,
     experience: false,     // no work experience yet — turn on when you add some
     education: true,
@@ -115,6 +117,17 @@ export const config: PortfolioConfig = {
     { name: "Jupyter", icon: "NotebookPen", category: "Tools", level: "Advanced", proficiency: 82, description: "Interactive analysis notebooks." },
     { name: "VS Code", icon: "Code", category: "Tools", level: "Advanced", proficiency: 85, description: "Everyday editor." },
     { name: "Cursor AI", icon: "MousePointer2", category: "Tools", level: "Intermediate", proficiency: 70, description: "AI-assisted coding." },
+  ],
+
+  /* -------------------------------------------------------------------------- */
+  /*  CURRENTLY LEARNING                                                        */
+  /*  Add / edit freely — just copy a line. icon = any lucide name or an emoji. */
+  /* -------------------------------------------------------------------------- */
+  learning: [
+    { name: "Data Structures & Algorithms", icon: "Binary", detail: "Interview-level problem solving in Java." },
+    { name: "Java", icon: "Coffee", detail: "Core Java & OOP for DSA and backend basics." },
+    { name: "Agentic AI", icon: "Bot", detail: "Building AI agents and automated workflows." },
+    { name: "Advanced Python", icon: "Code2", detail: "Deeper Python for ML and data engineering." },
   ],
 
   /* -------------------------------------------------------------------------- */
@@ -261,13 +274,13 @@ export const config: PortfolioConfig = {
   /*  THEME                                                                     */
   /* -------------------------------------------------------------------------- */
   theme: {
-    background: "#0d1117",
-    surface: "#161b22",
-    foreground: "#e6edf3",
-    muted: "#9198a1",
-    primary: "#3b82f6",
-    secondary: "#2563eb",
-    accent: "#60a5fa",
+    background: "#0b0d10",
+    surface: "#14181d",
+    foreground: "#e7eaee",
+    muted: "#8a93a0",
+    primary: "#10b981",
+    secondary: "#059669",
+    accent: "#34d399",
     border: "rgba(255,255,255,0.08)",
     radiusCard: "1.25rem",
     fontSans: "Inter",
@@ -281,12 +294,12 @@ export const config: PortfolioConfig = {
   /*  ANIMATIONS                                                                */
   /* -------------------------------------------------------------------------- */
   animations: {
-    enableLoadingScreen: true,
-    enableCustomCursor: true,
-    enableScrollProgress: true,
-    enableParallax: true,
-    enableTypingAnimation: true,
-    enableFloatingShapes: true,
+    enableLoadingScreen: false,   // instant load — feels more professional
+    enableCustomCursor: false,    // keep the normal cursor (better UX for recruiters)
+    enableScrollProgress: true,   // subtle top progress bar
+    enableParallax: false,        // no mouse-drift; calmer, cleaner
+    enableTypingAnimation: true,  // tasteful rotating role in the hero
+    enableFloatingShapes: false,  // no floating blobs; clean background
   },
 
   /* -------------------------------------------------------------------------- */
@@ -309,7 +322,7 @@ export const config: PortfolioConfig = {
       "Portfolio",
     ],
     author: "Jugendra Pratap",
-    siteUrl: "https://your-domain.com",
+    siteUrl: "https://jugendra-pratap.vercel.app",
     ogImage: "/og-image.png",
     twitterHandle: "",
     favicon: "/favicon.ico",
