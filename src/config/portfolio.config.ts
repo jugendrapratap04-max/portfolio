@@ -44,7 +44,7 @@ export const config: PortfolioConfig = {
     { icon: "Twitter", label: "Twitter", url: "", enabled: false },
     { icon: "Instagram", label: "Instagram", url: "", enabled: false },
     { icon: "Youtube", label: "YouTube", url: "", enabled: false },
-    { icon: "Globe", label: "Portfolio", url: "", enabled: false },
+    { icon: "Globe", label: "Web Studio", url: "https://web-studio-lilac.vercel.app", enabled: true },
   ],
 
   /* -------------------------------------------------------------------------- */
@@ -185,6 +185,220 @@ export const config: PortfolioConfig = {
       type: "Data Analytics",
       featured: true,
       futurePlans: ["Rebuild in Power BI / Tableau", "Automate the refresh"],
+    },
+    {
+      id: "krishi-procure-ai",
+      // HIDDEN 2026-08-30: not finished yet — the farmer/officer portal is incomplete and the deployed tab title is still the Vite default.
+      // Data kept — flip to false to bring it back, but re-check the feature list first.
+      hidden: true,
+      title: "KrishiProcure AI",
+      subtitle: "Smart India Hackathon prototype — AgriTech decision system",
+      description:
+        "A procurement and queue-management platform that routes farmers to the best mandi centre using explainable multi-criteria decision analysis, dynamic waiting-time estimation and demand forecasting.",
+      problem:
+        "At peak harvest, farmers travel to mandi grain centres with no visibility of queue length, intake capacity or distance — producing 6-12 hour waits and crop spoilage in the open.",
+      solution:
+        "Built an end-to-end platform that scores candidate centres with explainable MCDA, estimates live waiting time, issues booking tokens, and forecasts demand for mandi officers.",
+      features: [
+        "Explainable multi-criteria decision analysis for centre recommendation",
+        "Dynamic waiting-time estimation from live queue state",
+        "Smart token and slot booking with live queue tracking",
+        "Demand forecasting dashboard for mandi officers",
+      ],
+      techStack: ["React", "TypeScript", "Vite", "Python", "Forecasting", "MCDA"],
+      image: "",
+      github: "https://github.com/jugendrapratap04-max/krishi-procure-ai",
+      demo: "https://krishi-procure-ai.vercel.app",
+      status: "In Progress",
+      difficulty: "Advanced",
+      type: "Machine Learning",
+      featured: true,
+      futurePlans: ["Wire the forecasting model to live intake data", "Officer analytics view"],
+    },
+    {
+      id: "jugendra-web-studio",
+      title: "Jugendra Web Studio",
+      subtitle: "My web-design studio — live site and lead pipeline",
+      description:
+        "A bilingual (English/Hindi) studio site where small Indian businesses can see live demos, read fixed package rates and start a conversation. Enquiries are delivered straight to my phone.",
+      problem:
+        "Local businesses cannot judge a web developer from a price list alone, and lead forms that land in an inbox get answered too late.",
+      solution:
+        "Built a demo-first site where every claim is shown rather than asserted, with every user-facing string typed as an English/Hindi pair so a missing translation fails the build, and enquiries routed to a Telegram bot for instant notification.",
+      features: [
+        "Fully bilingual — English server-renders, Hindi applied client-side",
+        "Live demo gallery shown in browser and phone device mockups",
+        "Transparent package rates, with the half-payment figure computed rather than typed",
+        "Telegram-bot lead delivery — no database, instant notification",
+      ],
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Telegram Bot API"],
+      image: "",
+      github: "",
+      demo: "https://web-studio-lilac.vercel.app",
+      status: "Completed",
+      difficulty: "Advanced",
+      type: "Web Development",
+      featured: true,
+      futurePlans: ["Grounded AI chatbot for pricing questions", "Custom domain"],
+    },
+    {
+      id: "luxora-salon",
+      title: "LUXORA Salon & Spa",
+      subtitle: "Sample booking site for a premium Agra salon",
+      description:
+        "A demo site built to show salon owners in Agra what a booking-first website looks like: pick a service, pick a stylist, pick a slot, and watch the estimate update as you go. Built as a sample, not for a paying client.",
+      problem:
+        "Salons in Sanjay Place take every appointment over the phone or on WhatsApp, so enquiries arriving after closing time are simply lost, and nobody sees a price until they walk in.",
+      solution:
+        "Designed the whole page around one booking form that prices itself live, so a visitor knows the cost before they commit, and put a WhatsApp button on every screen for people who still prefer to type.",
+      features: [
+        "Live price estimator that recalculates as services and add-ons are picked",
+        "Reservation voucher rendered on submit and kept in localStorage — no backend",
+        "Service detail and gallery lightbox modals, all keyboard dismissible",
+        "Prices, names and testimonials rewritten for Agra, not the US original",
+      ],
+      techStack: ["React 19", "TypeScript", "Vite", "Tailwind CSS 4", "Framer Motion"],
+      image: "",
+      github: "",
+      demo: "https://luxora-salon-nine.vercel.app",
+      status: "Completed",
+      difficulty: "Intermediate",
+      type: "Web Development",
+      featured: true,
+    },
+    {
+      id: "agra-diagnostics",
+      title: "Agra Diagnostics",
+      subtitle: "Sample site for a pathology lab with home collection",
+      description:
+        "A demo site for a diagnostic centre, built around the two things patients actually search for: what a test costs, and whether someone will come to the house to draw the sample. Built as a sample, not for a paying client.",
+      problem:
+        "Lab pricing in Agra is almost never published, so patients ring around three labs to compare, and home-collection requests get lost between a phone call and a WhatsApp message.",
+      solution:
+        "Put a filterable test catalogue with visible prices on the front page, added a cart so several tests can be booked in one go, and made every report route end at WhatsApp, which is where patients already expect the PDF.",
+      features: [
+        "Filterable test catalogue with a cart drawer for multi-test bookings",
+        "Report tracker and home-collection booking modals",
+        "Turnaround-time table stating the report deadline for each test category",
+        "Mobile sticky call bar — most patients arrive on a phone",
+      ],
+      techStack: ["React 19", "TypeScript", "Vite", "Tailwind CSS 4", "Framer Motion"],
+      image: "",
+      github: "",
+      demo: "https://agra-diagnostics.vercel.app",
+      status: "Completed",
+      difficulty: "Intermediate",
+      type: "Web Development",
+      featured: true,
+    },
+    {
+      id: "mithai-wala-nuh",
+      title: "Mithai Wala Nuh",
+      subtitle: "Bilingual site for a highway sweet shop",
+      description:
+        "A Hindi/English single-page site for a sweet shop on NH-248A in Nuh, Haryana, built to reach the Delhi-Alwar weekend traffic that drives past the shop today without stopping.",
+      problem:
+        "The shop sells well to locals but is invisible to highway travellers, and no photograph of the storefront exists to build a page around.",
+      solution:
+        "Made the hero a painted signboard instead of a photo so the shop name leads, and hand-coded the page in HTML and CSS with no framework so it opens fast on a 3G phone at the roadside.",
+      features: [
+        "Hindi/English toggle that leaves the page complete in Hindi if JavaScript never runs",
+        "17 KB gzipped — no framework, no build step",
+        "Depth built from CSS 3D rather than motion; anything that makes a claim holds still",
+        "Hatched placeholders mark every fact the owner has not yet confirmed",
+      ],
+      techStack: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+      image: "",
+      github: "",
+      demo: "https://mithai-wala-nuh.vercel.app",
+      status: "Completed",
+      difficulty: "Intermediate",
+      type: "Web Development",
+      featured: false,
+    },
+    {
+      id: "madhav-guest-house",
+      // HIDDEN 2026-08-30: not finished yet — and it is a spec demo, no client contact made.
+      // Data kept — flip to false to bring it back, but re-check the feature list first.
+      hidden: true,
+      title: "Madhav Guest House",
+      subtitle: "Booking site for a Mathura guest house",
+      description:
+        "A Hindi/English site for a 4.9-star guest house on Parikrama Marg, Mathura, with a booking enquiry flow that composes a WhatsApp message instead of needing a backend.",
+      problem:
+        "The property took bookings mainly through travel portals, and pilgrims arriving in Mathura had no direct way to ask about rooms or darshan timings.",
+      solution:
+        "Built a single vanilla HTML page around the property's own photographs and its guests' own review quotes, with a booking form that opens a pre-filled WhatsApp message and a map that loads only when tapped.",
+      features: [
+        "Booking enquiry form that composes a WhatsApp message — no backend needed",
+        "Google Map loaded on tap only, so nothing third-party runs until asked",
+        "9.3 KB gzipped page plus AVIF photography",
+        "Scroll reveals and card tilt in pure CSS, inside prefers-reduced-motion",
+      ],
+      techStack: ["HTML", "CSS", "JavaScript", "AVIF", "WhatsApp Deep Links"],
+      image: "",
+      github: "",
+      demo: "https://madhav-guest-house.vercel.app",
+      status: "Completed",
+      difficulty: "Intermediate",
+      type: "Web Development",
+      featured: false,
+    },
+    {
+      id: "aamvan-orchards",
+      // HIDDEN 2026-08-30: not finished yet.
+      // Data kept — flip to false to bring it back, but re-check the feature list first.
+      hidden: true,
+      title: "Aamvan Orchards",
+      subtitle: "B2B bulk mango supply site",
+      description:
+        "A commercial site for a Kasganj mango orchard selling truck-load volumes to wholesalers, fruit traders and regional distributors.",
+      problem:
+        "Bulk fruit buyers judge a supplier on scale and process, which a phone number alone cannot communicate.",
+      solution:
+        "Built a procurement-focused site that walks a buyer through the five stages from orchard to delivery, then lets them pick a volume scale before starting a conversation.",
+      features: [
+        "Five-stage orchard-to-delivery sourcing walkthrough",
+        "Commercial volume selector for truck-load and batch procurement",
+        "Crate and packaging specification for transit planning",
+        "Written for commercial buyers rather than retail shoppers",
+      ],
+      techStack: ["React", "TypeScript", "Vite", "Responsive Design"],
+      image: "",
+      github: "https://github.com/jugendrapratap04-max/aamvan-orchards",
+      demo: "https://aamvan-orchards.vercel.app",
+      status: "Completed",
+      difficulty: "Intermediate",
+      type: "Web Development",
+      featured: false,
+    },
+    {
+      id: "kasganj-mango-farms",
+      // HIDDEN 2026-08-30: not finished yet.
+      // Data kept — flip to false to bring it back, but re-check the feature list first.
+      hidden: true,
+      title: "Kasganj Mango Farms",
+      subtitle: "Direct-to-home mango ordering site",
+      description:
+        "A consumer-facing site for a Kasganj mango farm, with a variety catalogue and WhatsApp ordering for home delivery.",
+      problem:
+        "Seasonal fruit sells on variety and freshness, and neither survives a plain WhatsApp forward.",
+      solution:
+        "Built a catalogue of the farm's mango varieties with season and taste notes, priced on enquiry, where every card opens a WhatsApp order message.",
+      features: [
+        "Variety catalogue — Dasheri, Langra, Chausa and desi — with season notes",
+        "Price-on-enquiry cards that open a WhatsApp order",
+        "Built as the D2C counterpart to the Aamvan Orchards bulk site",
+        "Mobile-first, for buyers ordering from a phone",
+      ],
+      techStack: ["React", "TypeScript", "Vite", "Responsive Design"],
+      image: "",
+      github: "https://github.com/jugendrapratap04-max/kasganj-mango-farms",
+      demo: "https://kasganj-mango-farms.vercel.app",
+      status: "Completed",
+      difficulty: "Beginner",
+      type: "Web Development",
+      featured: false,
     },
   ],
 
